@@ -26,9 +26,9 @@ public class PlayerControlle : MonoBehaviour
 
     void Start()
     {
-       _collider = GetComponent<CapsuleCollider>();
+        _collider = GetComponent<CapsuleCollider>();
         _colliderHeight = _collider.height;
-       rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         _drag = rb.drag;
 
     }
@@ -49,14 +49,14 @@ public class PlayerControlle : MonoBehaviour
             //sprint
             if (Input.GetKey(KeyCode.LeftShift) & Input.GetAxis("Vertical") > 0.8)
             {
-                amountToMove = (Speed+SprintSpeed) * Time.deltaTime;
+                amountToMove = (Speed + SprintSpeed) * Time.deltaTime;
             }
 
 
 
 
             //Check Movement
-            
+
             Vector3 Horizontalmovement = (Input.GetAxis("Horizontal") * transform.right * amountToMove);
             Vector3 Verticalmovement = (Input.GetAxis("Vertical") * transform.forward * amountToMove);
             Vector3 movement = (Horizontalmovement + Verticalmovement);
@@ -73,7 +73,7 @@ public class PlayerControlle : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.C))
                 {
-                    rb.AddForce(movement*SlideBoost);
+                    rb.AddForce(movement * SlideBoost);
                 }
                 Slide();
             }
@@ -118,14 +118,14 @@ public class PlayerControlle : MonoBehaviour
     {
         //adding vertical and the current movement
         CancelSlideandCrouch();
-        rb.AddForce(Vector3.up * jumpHeight+ movement* jumpPower);
+        rb.AddForce(Vector3.up * jumpHeight + movement * jumpPower);
     }
 
 
     public void Crouch(Vector3 movement)
     {
         rb.drag = _drag;
-        Move(movement/CrouchspeedDivider);
+        Move(movement / CrouchspeedDivider);
         _collider.height = crouchHeight;
     }
 

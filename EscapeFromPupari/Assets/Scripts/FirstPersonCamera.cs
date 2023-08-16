@@ -73,7 +73,7 @@ public class Firstplayercamera : MonoBehaviour
         //    }
         //    else { euler.z = euler.z / 2; }
         //}
-        euler.z = ((rotation * xspeed) + test)/2; 
+        euler.z = rotation * xspeed;
 
         test = euler.z;
 
