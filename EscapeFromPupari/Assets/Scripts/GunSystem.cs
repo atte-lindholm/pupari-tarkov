@@ -65,8 +65,8 @@ public class GunSystem : MonoBehaviour
         {
             Debug.Log(rayHit.collider.name);
 
-            //if (rayHit.collider.CompareTag("Enemy"))
-                //rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
+            if (rayHit.collider.CompareTag("Enemy"))
+                rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
         }
 
 
