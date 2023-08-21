@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 48
+  controlID: 128
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,8 +191,8 @@ MonoBehaviour:
     y: 481
     width: 890
     height: 466
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -631,9 +631,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.735121, y: 3.5335538, z: 26.712439}
+    m_Target: {x: 6.488275, y: -1.8397212, z: 71.587204}
     speed: 2
-    m_Value: {x: -5.735121, y: 3.5335538, z: 26.712439}
+    m_Value: {x: 6.488275, y: -1.8397212, z: 71.587204}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -679,13 +679,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.022115868, y: 0.62067133, z: 0.017476432, w: 0.7836365}
+    m_Target: {x: -0.040732164, y: -0.2699013, z: 0.011418402, w: -0.9620509}
     speed: 2
-    m_Value: {x: -0.022114612, y: 0.6206361, z: 0.017475441, w: 0.78359205}
+    m_Value: {x: -0.040728536, y: -0.26987728, z: 0.011417385, w: -0.96196526}
   m_Size:
-    m_Target: 10
+    m_Target: 35.798046
     speed: 2
-    m_Value: 10
+    m_Value: 35.798046
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -847,7 +847,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 04fbffff7a5b0000865b0000d05b0000fe5b0000385c0000
+      m_ExpandedIDs: f8faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -916,7 +916,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts/GunThings
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -924,16 +924,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/GunThings
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\repos\pupari-tarkov\EscapeFromPupari
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: ee5c0000
-    m_LastClickedID: 23790
-    m_ExpandedIDs: 00000000de5c0000e05c0000e25c0000e45c0000e65c0000e85c0000ea5c0000ec5c0000ee5c0000f05c0000f25c0000085d000000ca9a3b
+    m_SelectedIDs: 725d0000
+    m_LastClickedID: 23922
+    m_ExpandedIDs: 00000000145d0000165d0000185d00001a5d00001c5d00001e5d0000205d0000225d0000245d0000265d0000285d00003e5d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -961,7 +961,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000de5c0000e05c0000e25c0000e45c0000e65c0000e85c0000ea5c0000ec5c0000ee5c0000f05c0000f25c0000
+    m_ExpandedIDs: 00000000145d0000165d0000185d00001a5d00001c5d00001e5d0000205d0000225d0000245d0000265d0000285d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
