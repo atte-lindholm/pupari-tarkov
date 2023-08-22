@@ -357,15 +357,9 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/FirstPersonCamera.cs"
-<<<<<<< HEAD
 "Assets/Scripts/GunThings/GunSway.cs"
 "Assets/Scripts/GunThings/GunSystem.cs"
-"Assets/Scripts/PlayerControlle.cs"
-=======
-"Assets/Scripts/GunSystem.cs"
-"Assets/Scripts/InventoryItem.cs"
 "Assets/Scripts/PlayerController.cs"
->>>>>>> movement
 "Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Scripts/SpawnEffect.cs"
 "Assets/UnityTechnologies/ParticlePack/Shared/Ramps/Runtime/RampAsset.cs"
 "Assets/UnityTechnologies/ParticlePack/Shared/Scripts/AdjustTimeScale.cs"
