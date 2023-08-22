@@ -20451,8 +20451,13 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp",
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
+<<<<<<< HEAD
       "PayloadOffset": 1542135,
       "PayloadLength": 33505,
+=======
+      "PayloadOffset": 1548844,
+      "PayloadLength": 33465,
+>>>>>>> movement
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -20464,7 +20469,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
+<<<<<<< HEAD
       "PayloadOffset": 1575727,
+=======
+      "PayloadOffset": 1582396,
+>>>>>>> movement
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -20712,9 +20721,15 @@
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll",
         "Assets/Scripts/Enemy.cs",
         "Assets/Scripts/FirstPersonCamera.cs",
+<<<<<<< HEAD
         "Assets/Scripts/GunThings/GunSway.cs",
         "Assets/Scripts/GunThings/GunSystem.cs",
         "Assets/Scripts/PlayerControlle.cs",
+=======
+        "Assets/Scripts/GunSystem.cs",
+        "Assets/Scripts/InventoryItem.cs",
+        "Assets/Scripts/PlayerController.cs",
+>>>>>>> movement
         "Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Scripts/SpawnEffect.cs",
         "Assets/UnityTechnologies/ParticlePack/Shared/Ramps/Runtime/RampAsset.cs",
         "Assets/UnityTechnologies/ParticlePack/Shared/Scripts/AdjustTimeScale.cs",
@@ -20980,7 +20995,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
+<<<<<<< HEAD
       "PayloadOffset": 1575823,
+=======
+      "PayloadOffset": 1582492,
+>>>>>>> movement
       "PayloadLength": 9545,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
@@ -21229,9 +21248,15 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.UnityAdditionalFile.txt",
       "DisplayName": "Writing Assembly-CSharp-Editor.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
+<<<<<<< HEAD
       "PayloadOffset": 1585481,
       "PayloadLength": 39,
       "PayloadDebugContentSnippet": "E:\\repos\\pupari-tarkov\\EscapeF",
+=======
+      "PayloadOffset": 1592150,
+      "PayloadLength": 49,
+      "PayloadDebugContentSnippet": "D:\\Source 2\\Pupari\\pupari-tark",
+>>>>>>> movement
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.UnityAdditionalFile.txt"
@@ -21242,8 +21267,13 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp",
       "DisplayName": "Writing Assembly-CSharp-Editor.rsp",
       "ActionType": "WriteFile",
+<<<<<<< HEAD
       "PayloadOffset": 1585613,
       "PayloadLength": 35385,
+=======
+      "PayloadOffset": 1592292,
+      "PayloadLength": 35510,
+>>>>>>> movement
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -21255,7 +21285,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp2",
       "DisplayName": "Writing Assembly-CSharp-Editor.rsp2",
       "ActionType": "WriteFile",
+<<<<<<< HEAD
       "PayloadOffset": 1621092,
+=======
+      "PayloadOffset": 1627896,
+>>>>>>> movement
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -21583,8 +21617,13 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp-Editor.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
+<<<<<<< HEAD
       "PayloadOffset": 1621195,
       "PayloadLength": 10413,
+=======
+      "PayloadOffset": 1627999,
+      "PayloadLength": 10499,
+>>>>>>> movement
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
       "Outputs": [
