@@ -13,18 +13,18 @@ public class GunSway : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        original_rotation = transform.rotation;  
+        original_rotation = transform.rotation;
     }
 
-    
+
     // Update is called once per frame
     private void Update()
     {
         UpdateGunSway();
     }
 
-    
-    private void UpdateGunSway() 
+
+    private void UpdateGunSway()
     {
         // mouse controlls
         float x_mouse = Input.GetAxis("Mouse X");
@@ -37,7 +37,7 @@ public class GunSway : MonoBehaviour
 
         //rotate towards target rotation
         transform.localRotation = Quaternion.Lerp(transform.localRotation, target_rotation, Time.deltaTime * smooth);
-        
+
     }
 
 }
