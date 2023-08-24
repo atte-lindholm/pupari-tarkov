@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     public RaycastHit m_Hit;
     public float gravity;
 
+    public int maxHealth = 100;
+    public int currentHealth;
+
     //to draw the rays
     //got it working with https://docs.unity3d.com/ScriptReference/Physics.BoxCast.html
     private void OnDrawGizmos()
@@ -40,7 +43,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // to show velocity ín development
+        // to show velocity ú‹ development
         velocity = rb.velocity.magnitude;
         grounded = isground();
 
@@ -144,5 +147,23 @@ public class PlayerController : MonoBehaviour
     private void Gravity()
     {
         rb.AddForce(0f, -1 * gravity, 0f);
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        // logic for when the player's health reaches zero or below
+        if (currentHealth <= 0)
+        {
+            Die(); // Implement your logic for player death here
+        }
+    }
+
+    private void Die()
+    {
+        // logic for when the player dies
+        gameObject.SetActive(false);
     }
 }

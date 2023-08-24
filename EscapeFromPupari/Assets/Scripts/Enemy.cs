@@ -5,55 +5,44 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
 
-    public float speed = 5.0f; // Constant speed
-    public Transform startPoint;
-    public Transform endPoint;
+    public GameObject Target;
+    public float speed = 1.5f;
+    public int enemyDamage = 10; // Damage amount the enemy deals
 
-    private bool movingToEnd = true;
-
-    private void Update()
+    
+    private void Start()
     {
-        if (movingToEnd)
-        {
-            // Move towards the end point
-            transform.position = Vector3.MoveTowards(transform.position, endPoint.position, speed * Time.deltaTime);
-
-            // Check if reached the end point
-            if (Vector3.Distance(transform.position, endPoint.position) < 0.1f)
-            {
-                // Turn around
-                Flip();
-            }
-        }
-        else
-        {
-            // Move towards the start point
-            transform.position = Vector3.MoveTowards(transform.position, startPoint.position, speed * Time.deltaTime);
-
-            // Check if reached the start point
-            if (Vector3.Distance(transform.position, startPoint.position) < 0.1f)
-            {
-                // Turn around
-                Flip();
-            }
-        }
+        currentHealth = maxHealth;
     }
 
-    // This function flips the enemy's direction
-    private void Flip()
+    
+    private void Update()
     {
-        movingToEnd = !movingToEnd;
-        transform.Rotate(Vector3.up, 180f); // Rotate 180 degrees
+        transform.LookAt(Target.transform);
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
-        // Add any additional logic for handling damage here
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    // Called when the enemy collides with another collider
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Deal damage to the player
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                player.TakeDamage(enemyDamage);
+            }
         }
     }
 }
