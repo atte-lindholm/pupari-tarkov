@@ -78,7 +78,9 @@ public class GunSystem : MonoBehaviour
 
         //Graphics
         //bullethole no rotate
-        //Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
+        //Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.LookRotation(fpsCam.transform.position));
+
+
         Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
 
         bulletsLeft--;

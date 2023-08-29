@@ -10,6 +10,7 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     public float velocity;
+
     public float sprintSpeed;
     public float walkSpeed;
     public float rayCastBoxSize;
@@ -31,6 +32,8 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawRay(transform.position, Vector3.down * (height * 0.5f + rayCastheight));
         Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y - 0.75f + rayCastheight, transform.position.z) + Vector3.down * 0.5f, new Vector3(rayCastBoxSize, 0, rayCastBoxSize));
     }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +46,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // to show velocity ú‹ development
+        // to show velocity in development
         velocity = rb.velocity.magnitude;
+
+        //Get if player is touching the ground
         grounded = isground();
 
         //if on ground
@@ -144,6 +149,10 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(0f, jumpForce * 10f, 0f);
     }
 
+
+    /// <summary>
+    /// To add more gravity to player because rigidbody weight didint feel right
+    /// </summary>
     private void Gravity()
     {
         rb.AddForce(0f, -1 * gravity, 0f);

@@ -8,6 +8,7 @@ public class DeleteAsset : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Destroy gameobject after certain amount of time
         Destroy(gameObject,time);
     }
 
