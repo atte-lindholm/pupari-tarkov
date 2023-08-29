@@ -447,7 +447,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 341357651}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: MuzzleFlashLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 368198409}
   - component: {fileID: 368198402}
   - component: {fileID: 368198410}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ Transform:
   m_GameObject: {fileID: 368198400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.008, y: 1.4, z: 21.020134}
+  m_LocalPosition: {x: -21.008, y: 1.31, z: 21.020134}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -675,7 +675,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 578757104}
   - component: {fileID: 578757103}
   - component: {fileID: 578757109}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -946,11 +946,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296fbd8159a61544c97de767b1227a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
   agent: {fileID: 578757109}
   Target: {fileID: 368198400}
-  speed: 1
+  speed: 3
   rayCastSphereSize: 10
+  frontRaySize: 25
   enemyDamage: 1
 --- !u!54 &578757104
 Rigidbody:
@@ -1059,7 +1060,7 @@ Transform:
   m_GameObject: {fileID: 578757102}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.262, y: 0.52, z: 2.74}
+  m_LocalPosition: {x: -1.262, y: 0.88, z: 2.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1075,11 +1076,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 6
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 10
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1664,7 +1665,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2156,7 +2157,7 @@ GameObject:
   - component: {fileID: 1325582687}
   - component: {fileID: 1325582691}
   - component: {fileID: 1325582692}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2742,7 +2743,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8858203476084852678, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_LocalScale.x
@@ -2798,11 +2799,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8326176442121268691, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8282135536615600413, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -6660125383535661527, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2810,11 +2811,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6381a2822798cc041b99cf46b7a1eebc, type: 2}
     - target: {fileID: -5806180419798630726, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5503365209639172654, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4850122089891057187, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2826,7 +2827,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6381a2822798cc041b99cf46b7a1eebc, type: 2}
     - target: {fileID: 432505343315011575, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Name
@@ -2834,7 +2835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2041246752065223422, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2850,7 +2851,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ad92502c071a67f45a728e19c6baa36f, type: 2}
     - target: {fileID: 8820536049993344300, guid: e00b27b8d9c47264ab84203ddf941b2c, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3098,7 +3099,7 @@ NavMeshAgent:
   m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 80
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -3119,9 +3120,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 341357651}
     m_Modifications:
+    - target: {fileID: 674288396340774608, guid: 4d472284aa7ae304d8f9b1971d9c4712, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2816646011189436512, guid: 4d472284aa7ae304d8f9b1971d9c4712, type: 3}
       propertyPath: m_Name
       value: MuzzleFlash01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816646011189436512, guid: 4d472284aa7ae304d8f9b1971d9c4712, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5525210451294305994, guid: 4d472284aa7ae304d8f9b1971d9c4712, type: 3}
       propertyPath: m_LocalPosition.x
