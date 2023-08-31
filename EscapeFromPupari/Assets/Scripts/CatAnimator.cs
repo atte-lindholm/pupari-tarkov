@@ -6,26 +6,15 @@ public class CatAnimator : MonoBehaviour
 {
 
     public Animator animator;
-    Rigidbody rb;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+
+    Vector3 lastPos;
+
 
     // Update is called once per frame
     void Update()
     {
-        
-       if(rb.velocity.magnitude > 0.2)
-        {
-            animator.SetBool("Walk", true);
-            animator.SetBool("Sit", false);
-        }
-        else
-        {
-            animator.SetBool("Walk", false);
-            animator.SetBool("Sit", true);
-        }
+        var speed = (transform.position-lastPos).magnitude/Time.deltaTime;
+        animator.SetFloat("Speed",speed);
+        lastPos = transform.position;
     }
 }

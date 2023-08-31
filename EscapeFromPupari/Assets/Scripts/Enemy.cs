@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float rayCastSphereSize = 10.0f;
     public float frontRaySize = 25.0f;
     public int enemyDamage = 10; // Damage amount the enemy deals
+    public float Health;
     float timePassed;
     int layer;
     RaycastHit SpehereHit;
@@ -18,6 +19,8 @@ public class Enemy : MonoBehaviour
     bool chasing = false;
     Vector3 lastPosition;
     bool lastPosChecked = true;
+    ZombieAnimator animator;
+    bool Alive = true;
     
 
 
@@ -26,8 +29,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        // set the current health to the max health
         currentHealth = maxHealth;
+        animator = GetComponent<ZombieAnimator>();
 
         //Get the layer where the player is
         layer = LayerMask.GetMask("Player");
@@ -36,37 +39,49 @@ public class Enemy : MonoBehaviour
     //draw the sphere but not in the right spot
     private void OnDrawGizmos()
     {
-       Gizmos.DrawSphere(transform.position, rayCastSphereSize);
+      // Gizmos.DrawSphere(transform.position, rayCastSphereSize);
     }
     private void Update()
     {
-        //See if can chase the player and starts chacing if it can
-        chasing = whenToChase();
-
-        //if not chasing
-        if (!chasing ) 
+        Health = currentHealth;
+        if (Alive)
         {
-            //goes to last pos where player has been seen if not checked it
-            CheckLastPosition();
+            //reset animation states
+            animator.StopAttack();
 
-            //to randomize idle so that maybe does something every 4 seconds
-            timePassed += Time.deltaTime;
-            if (timePassed > 4)
+
+
+
+            //See if can chase the player and starts chacing if it can
+            chasing = WhenToChase();
+
+            //if not chasing
+            if (!chasing)
             {
-                timePassed = 0;
-                switch (Random.Range(0, 5))
+                animator.StopChase();
+                //goes to last pos where player has been seen if not checked it
+                CheckLastPosition();
+
+                //to randomize idle so that maybe does something every 4 seconds
+                timePassed += Time.deltaTime;
+                if (timePassed > 4)
                 {
-                    case 3:
-                        //moves to random pos
-                        SearchMove();
-                        break;
-                    case 2:
-                        //looks to random pos
-                        SearchTurn();
-                        break;
+                    timePassed = 0;
+                    switch (Random.Range(2, 4))
+                    {
+                        case 3:
+                            //moves to random pos
+                            SearchMove();
+                            break;
+                        case 2:
+                            //looks to random pos
+                            SearchTurn();
+                            break;
+                    }
                 }
             }
         }
+       
 
     }
 
@@ -76,14 +91,14 @@ public class Enemy : MonoBehaviour
         //resets the navmesh path
         agent.ResetPath();
         //looks at player
-        transform.LookAt(Target.transform.position);
+        transform.LookAt(new Vector3(Target.transform.position.x,transform.position.y,Target.transform.position.z));
         //runs
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
 
     //checks if can chase
-    bool whenToChase()
+    bool WhenToChase()
     {
 
         //if a straight ray hits. the ray has more distance than the speher
@@ -95,8 +110,8 @@ public class Enemy : MonoBehaviour
                 //memorize lastpos
                     lastPosition = straightHit.transform.position;
                 lastPosChecked = false;
-
                 //chase
+                animator.Chase();
                     StraightChase();
                     return true;
                 }
@@ -116,7 +131,7 @@ public class Enemy : MonoBehaviour
                 Debug.Log("Chase");
 
                 //look at and go to pos
-                transform.LookAt(Target.transform.position);
+                animator.Chase();
                 agent.SetDestination(lastPosition);
                 return true;
             }
@@ -154,10 +169,10 @@ public class Enemy : MonoBehaviour
     }
 
 
-    //lookas in direction
+    //look in random direction
     void SearchTurn()
     {
-        transform.rotation = Random.rotation;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Random.rotation, Time.deltaTime * 2);
     }
 
     
@@ -165,29 +180,32 @@ public class Enemy : MonoBehaviour
     //Made by Atte so not commentting
     public void TakeDamage(int damage)
     {
-        //allows enemy to take damage and die
         currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Alive = false;
+            animator.Dead();
         }
     }
 
-    
     // Called when the enemy collides with another collider
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (Alive)
         {
-            //if enemy collides whit enemy deal damage to the player
-            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-            if (player != null)
+            if (collision.gameObject.CompareTag("Player"))
             {
-                //player takes damage
-                player.TakeDamage(enemyDamage);
+                // Deal damage to the player
+                PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+                if (player != null)
+                {
+                    player.TakeDamage(enemyDamage);
+                    animator.Attack();
+                }
             }
         }
+
     }
 
 

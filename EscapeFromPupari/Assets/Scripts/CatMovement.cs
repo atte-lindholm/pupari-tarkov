@@ -11,18 +11,15 @@ public class CatMovement : MonoBehaviour
     public float distance = 30;
     public NavMeshAgent agent;
 
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
+
 
     // Update is called once per frame
     void Update()
     {
         if(Vector3.Distance(Target.transform.position, transform.position) > distance)
         {
-            agent.SetDestination(Target.transform.position);
+            agent.SetDestination(new Vector3(Target.transform.position.x+Random.Range(-1,1), Target.transform.position.y, Target.transform.position.z + Random.Range(-1, 1)));
         }
 
     }

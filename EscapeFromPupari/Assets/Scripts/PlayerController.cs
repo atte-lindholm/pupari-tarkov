@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         velocity = rb.velocity.magnitude;
 
         //Get if player is touching the ground
-        grounded = isground();
+        grounded = Isground();
 
         //if on ground
         if (grounded)
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //to cap the speed
-            maxSpeed();
+            MaxSpeed();
         }
         else
         {
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// caps the speed to sprint speed
     /// </summary>
-    private void maxSpeed()
+    private void MaxSpeed()
     {
         //gets the velocity
         Vector3 speed = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
     /// checks if on fround with raycast and returns the value
     /// </summary>
     /// <returns></returns>
-    private bool isground()
+    private bool Isground()
     {
         //if ground straight down
         if(Physics.Raycast(transform.position, Vector3.down, height * 0.5f + rayCastheight))
