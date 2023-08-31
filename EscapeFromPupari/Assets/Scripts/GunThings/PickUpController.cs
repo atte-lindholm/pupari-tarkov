@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickUpController : MonoBehaviour
 {
     public GunSystem gunScript;
+    public GunSway gunSway;
     public Rigidbody rb;
     public BoxCollider coll;
     public Transform player, gunContainer, fpsCam;
@@ -20,7 +21,7 @@ public class PickUpController : MonoBehaviour
         //check if gun is not equipped 
         if (!equipped)
         {
-            
+            gunSway.enabled = false;
             gunScript.enabled = false;
             rb.isKinematic = false;
             coll.isTrigger = false;
