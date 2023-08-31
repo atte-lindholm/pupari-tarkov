@@ -366,6 +366,7 @@
 "Assets/Scripts/GunThings/DeleteAsset.cs"
 "Assets/Scripts/GunThings/GunSway.cs"
 "Assets/Scripts/GunThings/GunSystem.cs"
+"Assets/Scripts/GunThings/PickUpController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Scripts/SpawnEffect.cs"
 "Assets/UnityTechnologies/ParticlePack/Shared/Ramps/Runtime/RampAsset.cs"

@@ -4,7 +4,7 @@ using TMPro;
 public class GunSystem : MonoBehaviour
 {
     //Gun stats
-    public int damage;
+    public int gunDamage;
     public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
@@ -14,7 +14,7 @@ public class GunSystem : MonoBehaviour
     bool shooting, readyToShoot, reloading;
 
     //Reference
-    public Camera fpsCam;
+    public Camera mainCamera;
     public Transform attackPoint;
     public RaycastHit rayHit;
     public LayerMask whatIsEnemy;
@@ -35,7 +35,7 @@ public class GunSystem : MonoBehaviour
     private void Update()
     {
         MyInput();
-        
+
         //SetText
         text.SetText(bulletsLeft + " / " + magazineSize);
     }
@@ -64,15 +64,16 @@ public class GunSystem : MonoBehaviour
         float y = Random.Range(-spread, spread);
 
         //Calculate Direction with Spread
-        Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
+        Vector3 direction = mainCamera.transform.forward + new Vector3(x, y, 0);
 
         //RayCast
-        if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, whatIsEnemy))
+        if (Physics.Raycast(mainCamera.transform.position, direction, out rayHit, range, whatIsEnemy))
         {
+            Debug.DrawRay(mainCamera.transform.position, direction * range, Color.red);
             Debug.Log(rayHit.collider.name);
 
             if (rayHit.collider.CompareTag("Enemy"))
-                rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
+                rayHit.collider.GetComponent<Enemy>().TakeDamage(gunDamage);
         }
 
 

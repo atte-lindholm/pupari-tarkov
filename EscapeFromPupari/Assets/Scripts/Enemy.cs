@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        // set the current health to the max health
         currentHealth = maxHealth;
 
         //Get the layer where the player is
@@ -164,6 +165,7 @@ public class Enemy : MonoBehaviour
     //Made by Atte so not commentting
     public void TakeDamage(int damage)
     {
+        //allows enemy to take damage and die
         currentHealth -= damage;
 
         if (currentHealth <= 0)
@@ -172,15 +174,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    
     // Called when the enemy collides with another collider
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Deal damage to the player
+            //if enemy collides whit enemy deal damage to the player
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {
+                //player takes damage
                 player.TakeDamage(enemyDamage);
             }
         }
