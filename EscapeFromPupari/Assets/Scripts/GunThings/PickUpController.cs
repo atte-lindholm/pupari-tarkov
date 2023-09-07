@@ -30,6 +30,7 @@ public class PickUpController : MonoBehaviour
         //check if gun is equipped
         if (equipped)
         {
+            gunSway.enabled = true;
             gunScript.enabled = true;
             rb.isKinematic = true;
             coll.isTrigger = true;
