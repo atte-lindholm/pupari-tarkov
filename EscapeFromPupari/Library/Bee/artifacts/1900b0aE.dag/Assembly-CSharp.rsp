@@ -369,6 +369,7 @@
 "Assets/Scripts/GunThings/PickUpController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/ZombieAnimator.cs"
+"Assets/Scripts/ZombieSpawner.cs"
 "Assets/UnityTechnologies/ParticlePack/EffectExamples/Misc Effects/Scripts/SpawnEffect.cs"
 "Assets/UnityTechnologies/ParticlePack/Shared/Ramps/Runtime/RampAsset.cs"
 "Assets/UnityTechnologies/ParticlePack/Shared/Scripts/AdjustTimeScale.cs"

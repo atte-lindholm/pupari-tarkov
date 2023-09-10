@@ -31,6 +31,8 @@ public class Enemy : MonoBehaviour
     {
         currentHealth = maxHealth;
         animator = GetComponent<ZombieAnimator>();
+        Target = GameObject.FindGameObjectWithTag("Player");
+
 
         //Get the layer where the player is
         layer = LayerMask.GetMask("Player");
@@ -102,7 +104,7 @@ public class Enemy : MonoBehaviour
     {
 
         //if a straight ray hits. the ray has more distance than the speher
-        if (Physics.Raycast(transform.position, transform.forward, out straightHit, frontRaySize, (layer | LayerMask.GetMask("Default"))))
+        if (Physics.Raycast(new Vector3(transform.position.x,transform.position.y+1, transform.position.z), transform.forward, out straightHit, frontRaySize, (layer | LayerMask.GetMask("Default"))))
         {
 
                 if (straightHit.transform.gameObject == Target.transform.gameObject)
